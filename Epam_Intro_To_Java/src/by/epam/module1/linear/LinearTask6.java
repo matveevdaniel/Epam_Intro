@@ -7,8 +7,8 @@ public class LinearTask6 {
     public static void main(String[] args) {
 
 	double x;
-	double y; 
-	
+	double y;
+
 	boolean hasPointInArea;
 
 	x = enterFromConsole("Введите координату х = ");
