@@ -7,4 +7,8 @@ public class CycleTask1 {
 
     }
 
+    public void doSomething() {
+	System.out.println("222");
+    }
+    
 }
