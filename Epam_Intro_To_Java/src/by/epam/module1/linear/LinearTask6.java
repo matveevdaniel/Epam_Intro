@@ -9,14 +9,14 @@ public class LinearTask6 {
 	double x;
 	double y; 
 	
-	boolean isPointInArea;
+	boolean hasPointInArea;
 
 	x = enterFromConsole("Введите координату х = ");
 	y = enterFromConsole("Введите координату y = ");
 
-	isPointInArea = isCoordinatesInsideArea(x, y);
+	hasPointInArea = isCoordinatesInsideArea(x, y);
 
-	System.out.println("Координата попадает в область: " + isPointInArea);
+	System.out.println("Координата находиться в области: " + hasPointInArea);
 
     }
 

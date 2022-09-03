@@ -11,26 +11,49 @@ public class LinearTask5 {
 	 * в секундах. Вывести данное значение длительности в часах, минутах и секундах
 	 * в следующей форме: HHч MMмин SSс.
 	 */
-	
+
 	int seconds;
+
 	String formatedTime;
-	LinearTask5 task;
 
-	task = new LinearTask5();
+	seconds = enterFromConsole("Введите время в секундах от 0 до 360000(включительно): ");
 
-	seconds = task.enterFromConsole("Введите 5-значное время в секундах: ");
+	formatedTime = getTimeFromSeconds(seconds);
 
-	formatedTime = task.getTimeFromSeconds(seconds);
-
-	System.out.println(formatedTime);
+	System.out.print("Форматированное время: " + formatedTime);
 
     }
 
-    public String getTimeFromSeconds(int timeInSeconds) {
+    @SuppressWarnings("resource")
+    private static int enterFromConsole(String message) {
+
+	int value;
+
+	Scanner scan;
+
+	scan = new Scanner(System.in);
+
+	do {
+	    System.out.print(message);
+
+	    while (!scan.hasNextInt()) {
+		scan.nextLine();
+		System.out.print(message);
+	    }
+
+	    value = scan.nextInt();
+
+	} while (value < 0 || value > 360000);
+
+	return value;
+    }
+
+    public static String getTimeFromSeconds(int timeInSeconds) {
 
 	int hours;
 	int minuts;
 	int seconds;
+
 	String time;
 
 	hours = (timeInSeconds / 60) / 60;
@@ -42,30 +65,4 @@ public class LinearTask5 {
 	return time;
 
     }
-
-    @SuppressWarnings("resource")
-    public int enterFromConsole(String message) {
-
-	int value;
-	
-	Scanner scan;
-
-	scan = new Scanner(System.in);
-
-	
-
-	//do {
-	    System.out.print(message);
-	    while (!scan.hasNextInt()) {
-	    scan.nextLine();
-	    System.out.print(message);
-	    }
-	//System.out.print("Int: ");
-	value = scan.nextInt();
-	//}
-	//while(value<0 || value>99999);
-
-	return value;
-    }
-
 }
