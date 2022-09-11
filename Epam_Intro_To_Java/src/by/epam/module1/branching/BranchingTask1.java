@@ -11,7 +11,7 @@ public class BranchingTask1 {
 
 	boolean isRightTriangle;
 
-	isRightTriangle = hasRightAngle(125, 50);
+	isRightTriangle = hasRightAngle(140, 50);
 
 	System.out.println("Является ли треугольник прямоугольным: " + isRightTriangle);
 
@@ -23,11 +23,11 @@ public class BranchingTask1 {
 
 	    if ((firstAngle + secondAngle == 90) || (firstAngle == 90 || secondAngle == 90)) {
 
-		System.out.println("Треугольник существует и он прямоугольный.");
+		System.out.println("Треугольник существует.");
 		return true;
 	    }
 
-	    System.out.println("Треугольник существует, но он не прямоугольный.");
+	    System.out.println("Треугольник существует.");
 
 	}
 
